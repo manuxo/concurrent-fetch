@@ -13,10 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(morgan('dev'));
 //Routes
-const pokemonRouter = express.Router();
-pokemonRouter.get('/',(req,res) => {
-    res.status(200).send("Pokemon list");
-});
+const pokemonRouter = require('./routes/pokemon-router');
 app.use('/api/pokemon',pokemonRouter);
 //Create server and listen
 const server = http.createServer(app);

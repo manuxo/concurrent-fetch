@@ -1,6 +1,6 @@
 const File = require('../util.io/files');
 let Pokemon = {};
-const path = 'mock-data.json';
+const path = './models/mock-data.json';
 Pokemon.findAll = async () => {
     let response = null;
     try{
@@ -44,8 +44,8 @@ Pokemon.Update = async (id,data) => {
         const mockData = await File.getJSONDataFromFile(path); 
         const target = mockData.pokemons.find(x => x.id === id);
         if(target){
-            for(let property of Object.entries(data)){
-                target[property] = data[property];
+            for(let key of Object.keys(data)){
+                target[key] = data[key];
             }
             response = await File.setJSONDataToFile(path,mockData);
         }
