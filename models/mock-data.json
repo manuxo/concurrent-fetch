@@ -1,0 +1,20 @@
+{
+    "pokemons": [
+        {
+            "id": 1,
+            "name": "Pikachu",
+            "height": 0.34,
+            "types": [
+                "Electric"
+            ],
+            "abilities": [
+                "Volt Tackle",
+                "Iron Tail",
+                "Thunder Punch",
+                "Electric Terrain"
+            ],
+            "level": 5,
+            "genre": "Male"
+        }
+    ]
+}
