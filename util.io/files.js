@@ -1,3 +1,4 @@
+const fs = require('fs');
 let File = {};
 
 File.getJSONDataFromFile = path => {
@@ -10,6 +11,19 @@ File.getJSONDataFromFile = path => {
                 resolve(mockData);
             }
         })
+    });
+}
+
+File.setJSONDataToFile = (path,data) => {
+    return new Promise((resolve,reject) => {
+        const strData = JSON.stringify(data);
+        fs.writeFile(path,strData,err => {
+            if(err){
+                reject(err);
+            }else{
+                resolve("Mock Data saved successfully.");
+            }
+        });
     });
 }
 

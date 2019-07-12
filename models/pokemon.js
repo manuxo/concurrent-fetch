@@ -1,9 +1,58 @@
 const File = require('../util.io/files');
 let Pokemon = {};
-
+const path = 'mock-data.json';
 Pokemon.findAll = async () => {
-    const mockData = await File.getJSONDataFromFile('mock-data.json');
-    return mockData.pokemons;
+    let response = null;
+    try{
+        const mockData = await File.getJSONDataFromFile(path);
+        response = mockData.pokemons;
+    }catch(err){
+        response = Promise.reject(err);
+    }
+    return response;
+};
+
+Pokemon.findById = async (id) => {
+    let response = null;
+    try{
+        const mockData = await File.getJSONDataFromFile(path);
+        const pokemon = mockData.pokemons.find(x => x.id === id);
+        if(pokemon){
+            response = pokemon;
+        }
+    }catch(err){
+        response = Promise.reject(err);
+    }
+    return response;
+};
+
+Pokemon.Add = async (newPokemon) => {
+    let response = null;
+    try{
+        const mockData = await File.getJSONDataFromFile(path);
+        mockData.pokemons.push(newPokemon);
+        response = await File.setJSONDataToFile(path,mockData);
+    }catch(err){
+        response = Promise.reject(err);
+    }
+    return response;
+};
+
+Pokemon.Update = async (id,data) => {
+    let response = null;
+    try{
+        const mockData = await File.getJSONDataFromFile(path); 
+        const target = mockData.pokemons.find(x => x.id === id);
+        if(target){
+            for(let property of Object.entries(data)){
+                target[property] = data[property];
+            }
+            response = await File.setJSONDataToFile(path,mockData);
+        }
+    }catch(err){
+        response = Promise.reject(err);
+    }
+    return response;
 }
 
 module.exports = Pokemon;
