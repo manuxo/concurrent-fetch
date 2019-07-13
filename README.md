@@ -1,4 +1,4 @@
-# concurrent-fetch
+# fetch API
 Getting started with Promises (async-await) and fetch API
 
 ## Fetch  with Promises
