@@ -49,6 +49,22 @@
                     </table>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Items</h3>
+                </div>
+                <div class="col-sm-12">
+                    <table class="table" id="table-items">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Effects</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
         </div>
     </main>
     <footer></footer>
@@ -58,8 +74,13 @@
     <script src="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
     <script>
         let dtbPokemon = new DataTable("#table-pokemons");
+        let dtbItems = new DataTable("#table-items");
         document.addEventListener('DOMContentLoaded', () => {
-            getPokemons();
+            Promise.all([getPokemons(),getItems()]).then(value => {
+                console.log(value);
+            },reason => {
+                console.log(reason);
+            });
         });
         async function getPokemons(){
             try{
@@ -74,12 +95,32 @@
                             Genre: pokemon.genre
                         };
                     });
-                    debugger
                     dtbPokemon.insert(rows);
+                    return Promise.resolve("Data retrieved successfully");
                 }
                 throw new Error('Request Failed!');
             }catch(error){
-                console.log(error);
+                return Promise.reject(error);
+            }
+        }
+        async function getItems(){
+            try{
+                const response = await fetch('/api/item/');
+                if(response.ok){
+                    const jsonResponse = await response.json();
+                    let rows = jsonResponse.map(item => {
+                        return {
+                            Name: item.name,
+                            Effects: item.effects,
+                            Price: item.price
+                        };
+                    });
+                    dtbItems.insert(rows);
+                    return Promise.resolve("Data retrieved successfully");
+                }
+                throw new Error('Request Failed!');
+            }catch(error){
+                return Promise.reject(error);
             }
         }
     </script>
