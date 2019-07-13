@@ -1,5 +1,6 @@
 const express = require('express');
-const pokemon = require('../models/pokemon');
+const Model = require('../models/model');
+const pokemon = new Model('pokemons');
 let pokemonRouter = express.Router();
 pokemonRouter.get('/',(req,res) => {
     pokemon.findAll().then(value => {
