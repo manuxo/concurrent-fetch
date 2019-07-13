@@ -1,1 +1,34 @@
-{"pokemons":[{"id":1,"name":"Pikachu","height":0.34,"types":["Electric"],"abilities":["Volt Tackle","Iron Tail","Thunder Punch","Electric Terrain"],"level":5,"genre":"Male"},{"id":2,"name":"Raichu","height":0.65,"types":["Electric"],"abilities":["Volt Tackle","Electric Terrain"],"level":29,"genre":"Female"}]}
+{
+  "pokemons": [
+    {
+      "id": 1,
+      "name": "Pikachu",
+      "height": 0.34,
+      "types": [
+        "Electric"
+      ],
+      "abilities": [
+        "Volt Tackle",
+        "Iron Tail",
+        "Thunder Punch",
+        "Electric Terrain"
+      ],
+      "level": 5,
+      "genre": "Male"
+    },
+    {
+      "id": 2,
+      "name": "Raichu",
+      "height": 0.65,
+      "types": [
+        "Electric"
+      ],
+      "abilities": [
+        "Volt Tackle",
+        "Electric Terrain"
+      ],
+      "level": 35,
+      "genre": "Female"
+    }
+  ]
+}

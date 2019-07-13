@@ -16,7 +16,7 @@ File.getJSONDataFromFile = path => {
 
 File.setJSONDataToFile = (path,data) => {
     return new Promise((resolve,reject) => {
-        const strData = JSON.stringify(data);
+        const strData = JSON.stringify(data,null,2);
         fs.writeFile(path,strData,err => {
             if(err){
                 reject(err);
