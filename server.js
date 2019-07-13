@@ -14,7 +14,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(morgan('dev'));
 //Routes
 const pokemonRouter = require('./routes/pokemon-router');
+const itemRouter = require('./routes/item-router');
 app.use('/api/pokemon',pokemonRouter);
+app.use('/api/item',itemRouter);
 app.get('/',(req,res) => {
     res.sendFile(path.join(__dirname,'views','home','index.html'));
 });
