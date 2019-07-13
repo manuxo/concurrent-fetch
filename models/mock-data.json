@@ -30,5 +30,61 @@
       "level": 50,
       "genre": "Female"
     }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "Poke Ball",
+      "effects": "A device for catching wild Pokemon",
+      "price": 20
+    },
+    {
+      "id": 2,
+      "name": "Super Ball",
+      "effects": "A good, high-performance Ball that provides a higher Pokémon catch rate than a standard Poke Ball.",
+      "price": 50
+    },
+    {
+      "id": 3,
+      "name": "Ultra Ball",
+      "effects": "An ultra-performance Ball that provides a higher Pokémon catch rate than a Great Ball.",
+      "price": 100
+    },
+    {
+      "id": 4,
+      "name": "Master Ball",
+      "effects": "It will catch any wild Pokémon without fail.",
+      "price": 5000
+    },
+    {
+      "id": 5,
+      "name": "Carbos",
+      "effects": "Carbos increases a Pokémon's EVs in Speed by 10, up to a maximum of 100.",
+      "price": 500
+    },
+    {
+      "id": 6,
+      "name": "Water Stone",
+      "effects": "The Water Stone causes a Pokemon to evolve.",
+      "price": 500
+    },
+    {
+      "id": 7,
+      "name": "Thunder Stone",
+      "effects": "The Thunder Stone causes a Pokemon to evolve.",
+      "price": 1000
+    },
+    {
+      "id": 8,
+      "name": "Ice Stone",
+      "effects": "The Ice Stone causes a Pokemon to evolve.",
+      "price": 1500
+    },
+    {
+      "id": 9,
+      "name": "Leaf Stone",
+      "effects": "The Leaf Stone causes a Pokemon to evolve.",
+      "price": 500
+    }
   ]
 }
