@@ -15,6 +15,10 @@ app.use(morgan('dev'));
 //Routes
 const pokemonRouter = require('./routes/pokemon-router');
 app.use('/api/pokemon',pokemonRouter);
+app.get('/',(req,res) => {
+    res.sendFile(path.join(__dirname,'views','home'));
+});
+
 //Create server and listen
 const server = http.createServer(app);
 server.listen(PORT, () => {

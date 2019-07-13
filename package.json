@@ -1,0 +1,24 @@
+{
+  "name": "concurrent-fetch",
+  "version": "1.0.0",
+  "description": "Getting started with Promises (async-await) and fetch API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuxo/concurrent-fetch.git"
+  },
+  "author": "Manuel Alvarado Estanga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manuxo/concurrent-fetch/issues"
+  },
+  "homepage": "https://github.com/manuxo/concurrent-fetch#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  }
+}
